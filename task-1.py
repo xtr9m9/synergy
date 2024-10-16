@@ -1,15 +1,21 @@
-class Transport:
-    def __init__(self, name, max_speed, mileage):
-        self.name = name
-        self.max_speed = max_speed
-        self.mileage = mileage
+class CashRegister:
+    def __init__(self, balance=0):
+        self.balance = balance
 
-# Класс Autobus наследует класс Transport
-class Autobus(Transport):
-    pass
+    # Метод для пополнения кассы
+    def top_up(self, amount):
+        self.balance += amount
+        print(f"Касса пополнена на {amount}. Текущий баланс: {self.balance}")
 
-# Создание объекта класса Autobus
-bus = Autobus("Renaul Logan", 180, 12)
+    # Метод для подсчета количества целых тысяч
+    def count_1000(self):
+        thousands = self.balance // 1000
+        print(f"В кассе {thousands} целых тысяч.")
+        return thousands
 
-# Вывод результата
-print(f"Название автомобиля: {bus.name} Скорость: {bus.max_speed} Пробег: {bus.mileage}")
+    # Метод для снятия денег с кассы
+    def take_away(self, amount):
+        if amount > self.balance:
+            raise ValueError("Недостаточно денег в кассе!")
+        self.balance -= amount
+        print(f"Из кассы забрано {amount}. Текущий баланс: {self.balance}")
