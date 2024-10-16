@@ -1,35 +1,13 @@
-import random
+# Последовательность
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
-# Функция для генерации матрицы размером n x m
-def generate_matrix(rows, cols):
-    return [[random.randint(-200, 200) for _ in range(cols)] for _ in range(rows)]
+# Рекурсивная функция для вывода элементов списка
+def print_list_recursively(lst, index=0):
+    if index < len(lst):
+        print(lst[index])
+        print_list_recursively(lst, index + 1)  # Рекурсивный вызов с увеличением индекса
+    else:
+        print("Конец списка")
 
-# Функция для сложения двух матриц
-def add_matrices(matrix1, matrix2):
-    rows = len(matrix1)
-    cols = len(matrix1[0])
-    result = [[matrix1[i][j] + matrix2[i][j] for j in range(cols)] for i in range(rows)]
-    return result
-
-# Размер матриц
-rows, cols = 10, 10
-
-# Генерация двух матриц
-matrix_1 = generate_matrix(rows, cols)
-matrix_2 = generate_matrix(rows, cols)
-
-# Сложение матриц
-matrix_3 = add_matrices(matrix_1, matrix_2)
-
-# Вывод результатов
-print("Matrix 1:")
-for row in matrix_1:
-    print(row)
-
-print("\nMatrix 2:")
-for row in matrix_2:
-    print(row)
-
-print("\nMatrix 3 (Result of addition):")
-for row in matrix_3:
-    print(row)
+# Вызов функции
+print_list_recursively(my_list)
