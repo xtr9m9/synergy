@@ -1,13 +1,15 @@
-# Последовательность
-my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+class Transport:
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
 
-# Рекурсивная функция для вывода элементов списка
-def print_list_recursively(lst, index=0):
-    if index < len(lst):
-        print(lst[index])
-        print_list_recursively(lst, index + 1)  # Рекурсивный вызов с увеличением индекса
-    else:
-        print("Конец списка")
+# Класс Autobus наследует класс Transport
+class Autobus(Transport):
+    pass
 
-# Вызов функции
-print_list_recursively(my_list)
+# Создание объекта класса Autobus
+bus = Autobus("Renaul Logan", 180, 12)
+
+# Вывод результата
+print(f"Название автомобиля: {bus.name} Скорость: {bus.max_speed} Пробег: {bus.mileage}")
