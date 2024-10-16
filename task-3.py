@@ -1,15 +1,6 @@
-# Задание 3: Инвесторы
-X = int(input("Минимальная сумма инвестиций: "))
-A = int(input("У Майкла есть: "))
-B = int(input("У Ивана есть: "))
+# Задание 3: Вывод четных чисел на отрезке
+A = int(input("Введите число A: "))
+B = int(input("Введите число B: "))
 
-if A >= X and B >= X:
-    print(2)
-elif A >= X:
-    print("Mike")
-elif B >= X:
-    print("Ivan")
-elif A + B >= X:
-    print(1)
-else:
-    print(0)
+even_numbers = [str(i) for i in range(A, B + 1) if i % 2 == 0]
+print(" ".join(even_numbers))

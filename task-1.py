@@ -1,13 +1,10 @@
-# Задание 1: Описание числа
-number = int(input("Введите целое число: "))
+# Задание 1: Подсчет нулей
+N = int(input("Введите количество чисел: "))
+count_zeros = 0
 
-if number == 0:
-    print("нулевое число")
-elif number > 0 and number % 2 == 0:
-    print("положительное четное число")
-elif number > 0 and number % 2 != 0:
-    print("положительное нечетное число")
-elif number < 0 and number % 2 == 0:
-    print("отрицательное четное число")
-else:
-    print("отрицательное нечетное число")
+for _ in range(N):
+    number = int(input())
+    if number == 0:
+        count_zeros += 1
+
+print(f"Количество нулей: {count_zeros}")
